@@ -23,4 +23,4 @@ Gate Hari 2: jelaskan beda json.load dan json.loads, dan buat folder baru lewat 
 
 *Problem :* gua masih melihat catatan dari claude ai untuk membantu gua menulis kode tetapi gua lumayan paham isinya, gua masih belum bisa membedakan fungsi" json seperti json.load() | json.loads() | json.dump() | json.dumps() karna sudah 90 menit belajar saya lanjut kan besok
 
-*Status :* Belum selesai, gate belum tercapai karna kekurangan waktu
+*Status :* Selesai, json.load itu cara python untuk memudahkan mewmbaca suatu file yg berisikan file json, sedangkan json.loads ituu gunanya untuk menekstrak data json yg berbentuk string menjadi dictionary/list yg bsa di baca python. 
