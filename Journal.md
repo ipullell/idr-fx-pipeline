@@ -65,5 +65,16 @@ Sukses, "status code yg kisaran 200 artinya requests berhasil dan data bisa di a
 **🚪 Gate:**  jelaskan jalur dari response sampai ke satu angka kurs IDR, dengan kata-katamu sendiri (misalnya: dari response, ke data, ke elemen mana, ke kunci apa).
 
 ### 🧩Problem
+Gua memakai cara yg terlalu ribet di awal dengan menggunakan looping untuk hanya menampilkan 5 baris pertama yg pdahl bisa memakai cara yg lebih simple dengan menggunakan `data[:5]` << untuk menampilkan 5 baris pertamanya, dann gua juga tugas pertama gua selesai dengan kesalahan, gua ikut menampilkan value nya padahal cuman disuruh menampilkan key dari setiap datanya, gua belum tau fungsi .keys(). dann gua salah memahami maksud dari codingan gua yg awalnya seperti ini
+
+Gate::: hmm dari codingan gua awalnya response meminta memanggil api dengan requests.get(url) kemudian try melihat apakah status code 200? ataukah error? kemudian variabel data mengambil data yg udh ada di dalam variabel response, kemudian di ambil pake format json. hehehe gitu sih menurut gua. kemudian tinggal print data[0] baris pertama
+
+kemudian gua revisi karna di koreksi claude masih banyak salah, menjadi begini (dibawah), dan gua juga baru tau jika response api selain 200 bukan di anggap error, danitu guna nya raise_for_status.
 
 ### ✅ Status
+
+Berahasil, pada awalnya gua mencoba mengurung proses nya didalm try-except untuk menangani internet mati dan  timeout, kemudian gua meminta data dengan menggunakan library requests, dan kemudian gua buat agar data tersbut bisa dipakai oleh python dengan menggunakan response.json() kemudian gua tampilkan semua key di datanya dengan cara print(data[0].keys()), lalu gua menggunakan looping untuk memprint semua data yg gua mau dengan cara memfilter menggunakan fungsi if jika key quote berisikan vallue IDR, maka tampilkan value rate dan date nya di terminal lalu program gua hentikan menggunakan break. dan jika program error karna internet mati gua sudah menangani nya dengan except dan info error nya karna apa.
+
+dan "Satu pertanyaan masih belum kamu jawab, dan penting untuk desain pipeline: untuk elemen IDR, base-nya apa, dan angka rate itu artinya apa dalam kalimat biasa?" >> elemen idr itu basenya adalah eur, sedangkan rate itu adalah hasil konversi dari nilai mata uang eur ke idr. simple na sih gituu
+
+## Day 5 · 23 October 2026 
