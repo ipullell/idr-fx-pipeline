@@ -77,4 +77,27 @@ Berahasil, pada awalnya gua mencoba mengurung proses nya didalm try-except untuk
 
 dan "Satu pertanyaan masih belum kamu jawab, dan penting untuk desain pipeline: untuk elemen IDR, base-nya apa, dan angka rate itu artinya apa dalam kalimat biasa?" >> elemen idr itu basenya adalah eur, sedangkan rate itu adalah hasil konversi dari nilai mata uang eur ke idr. simple na sih gituu
 
-## Day 5 · 23 October 2026 
+## Day 5 · 23 October 2026 > _" fungsi extract()"_
+
+
+### 🎯 Task
+
+Di extract.py proyekmu, tulis fungsi extract() yang:
+
+1. memanggil API Frankfurter seperti di Hari 3-4 (pertahankan try/except-mu),
+2. menyimpan seluruh isi respons apa adanya ke data/raw/ dengan nama berisi cap waktu (misalnya rates_<cap_waktu>.json),
+3. mengembalikan alamat file yang disimpan.
+
+*Beberapa catatan:*
+
+1. Jangan filter IDR di sini. Menyimpan semuanya adalah tugas raw; menyaring itu urusan transform di Minggu 2.
+2. Jalankan dari folder utama proyek, bukan dari dalam src/. Alamat relatif seperti data/raw dihitung dari tempat kamu menjalankan program.
+3. Jalankan dua kali; harus ada dua file berbeda. Buka satu file dan pastikan isinya JSON yang valid.
+
+**🚪 Gate:**  extract() berdiri sendiri (tidak mencetak hasil filter dan tidak mengandung logika IDR), menghasilkan satu file per eksekusi, dan kamu bisa menjelaskan kenapa fungsi itu mengembalikan alamat file, bukan datanya.
+
+### 🧩Problem
+Gua kurang memahami maksud mengembalikan dari pertanyaan claude, ternyata mengembalikan yg dimaksud adalah menggunakan fungsi retrun wkwkwkw
+
+### ✅ Status
+Berhasil, gampang nya karna gua ngasih retrun yg berfungsi untuk mengembalikan sesuatu agar bisa di pake di luar fungsi gua. dan karna gua retrun variabel file yg berisikn alamat file maka yg tampil di terminal saat gua mencetak variabel raw(yg didalam nya adlah fungsi extract) adalah alamat file nya
