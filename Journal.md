@@ -53,6 +53,8 @@ Gua harusnya memakai try except agar bisa menangkap kondisi error requests saat 
 ### ✅ Status
 Sukses, "status code yg kisaran 200 artinya requests berhasil dan data bisa di ambil, sedangkan isi response.json itu berformat list yg berisi banyak sekali dictionary."
 
+---
+
 ## Day 4 · 22 October 2026 > _"membaca struktur data"_
 
 ### 🎯 Task
@@ -77,6 +79,8 @@ Berahasil, pada awalnya gua mencoba mengurung proses nya didalm try-except untuk
 
 dan "Satu pertanyaan masih belum kamu jawab, dan penting untuk desain pipeline: untuk elemen IDR, base-nya apa, dan angka rate itu artinya apa dalam kalimat biasa?" >> elemen idr itu basenya adalah eur, sedangkan rate itu adalah hasil konversi dari nilai mata uang eur ke idr. simple na sih gituu
 
+---
+
 ## Day 5 · 23 October 2026 > _" fungsi extract()"_
 
 
@@ -100,4 +104,34 @@ Di extract.py proyekmu, tulis fungsi extract() yang:
 Gua kurang memahami maksud mengembalikan dari pertanyaan claude, ternyata mengembalikan yg dimaksud adalah menggunakan fungsi retrun wkwkwkw
 
 ### ✅ Status
-Berhasil, gampang nya karna gua ngasih retrun yg berfungsi untuk mengembalikan sesuatu agar bisa di pake di luar fungsi gua. dan karna gua retrun variabel file yg berisikn alamat file maka yg tampil di terminal saat gua mencetak variabel raw(yg didalam nya adlah fungsi extract) adalah alamat file nya
+Berhasil, gampang nya karna gua ngasih retrun yg berfungsi untuk mengembalikan sesuatu agar bisa di pake di luar fungsi gua. dan karna gua retrun variabel file yg berisikn alamat file maka yg tampil di terminal saat gua mencetak variabel raw(yg didalam nya adlah fungsi extract) adalah alamat file nya.
+
+---
+
+## Day 6 · 25 October 2026 > _"logging dan kembalikan error"_
+
+### 🎯 Task
+
+1. Atur logging di bagian __main__: level INFO, format berisi waktu, tingkat, dan pesan, keluar ke file logs/pipeline.log dan terminal. Tambahkan logs/ ke .gitignore.
+2. Ganti print di dalam extract() dengan log: INFO saat mulai memanggil API, INFO saat berhasil (sertakan alamat file dan jumlah data), ERROR di blok except dengan detail penyebabnya.
+3. Perbaiki hal janggal kemarin. Saat extract() gagal, ia mengembalikan None, tetapi bagian __main__ tetap menulis pesan sukses. Ubah supaya pesan sukses hanya muncul kalau memang berhasil, dan kalau gagal, catat bahwa proses dihentikan. Petunjuk: periksa dulu hasil extract() sebelum menganggapnya sukses. Nanti di Minggu 4, kegagalan ini juga akan dilaporkan ke penjadwal lewat kode keluar (exit code), tetapi itu belum sekarang.
+4. Uji tiga kondisi dan lihat isi logs/pipeline.log setiap kali:
+    - jalan normal
+    - internet dimatikan
+    - alamat API sengaja diberi huruf salah di bagian path (ini menguji raise_for_status)
+
+**🚪 Gate:** 
+Matikan internet lalu jalankan: di log harus muncul satu pesan ERROR yang jelas, program tidak crash, dan tidak ada pesan sukses. Siapkan juga jawaban: kenapa logging.exception lebih berguna daripada print(e) saat pipeline berjalan sendiri?
+
+### 🧩Problem
+Gua sempat kebingungan cara mengembalikan hasil error/berhasil ke dalam if __name__ == __main__ gua tanya ke ai, tetapi ga copas, gua lihat pola nya dia memberikan 2 contoh berbeda yg di ambil bukan dari kasus gua, lalu akhirnya gua paham ternyata ada 2 cara dan gua pake yg try-except nya ditaruh di dalam fungsi if __name__ == __main__ agar bisa menangkap error disana wkwkwk. gua juga lupa memasukan file log ke dalam folder logs yg udh gua buat dan struktur folder gua masih belum rapi karna folder src memiliki folder data dan folder logs. besok gua pindahin.
+
+### ✅ Status
+Berhasil, Error yg jelas, dan penjelasan kenapa lebih baik menggunakan logging dibanding print.
+(venv) PS C:\Data Engineer\src> py script.py
+2026-10-25 19:39:48,669 | INFO | Memulai proses pengambilan data lewat API...
+2026-10-25 19:39:48,689 | ERROR | Proses gagal! Detail HTTPSConnectionPool(host='api.frankfurter.dev', port=443): Max retries exceeded with url: /v2/rates (Caused by NameResolutionError("HTTPSConnection(host='api.frankfurter.dev', port=443): Failed to resolve 'api.frankfurter.dev' ([Errno 11001] getaddrinfo failed)"))
+
+Karna kalo cuman print (e) itu hanya muncul 1 kali di terminal dan akan susah untuk debugging sedangkan jika pake logging kita bisa tau meskipun kita ga langsung melihat saat error nya terjadi.
+
+---
