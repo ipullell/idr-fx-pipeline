@@ -135,3 +135,29 @@ Berhasil, Error yg jelas, dan penjelasan kenapa lebih baik menggunakan logging d
 Karna kalo cuman print (e) itu hanya muncul 1 kali di terminal dan akan susah untuk debugging sedangkan jika pake logging kita bisa tau meskipun kita ga langsung melihat saat error nya terjadi.
 
 ---
+
+## Day 7 · 26 October 2026 > _"Latihan dan penilaian Materi selama seminggu"_
+
+### 🚫 The Rules:
+- Waktu: 30 menit, pakai timer. Ini bukan lomba, hanya cara mengukur apa yang benar-benar sudah kamu kuasai.
+- Mulai dari file kosong yang baru. Jangan buka kode lamamu, catatan, atau AI (termasuk aku). Boleh membaca pesan error Python.
+- Kalau lupa sintaks kecil, tulis komentar # lupa: ..., lalu lanjut ke bagian berikutnya. Daftar “lupa” itu nanti jadi bahan belajarmu, jadi jujurlah.
+
+### 🎯 Task
+1. Fungsi extract() yang memanggil "https://api.frankfurter.dev/v2/rates" dengan timeout.
+2. Respons yang berstatus buruk dianggap error.
+3. Isi respons disimpan apa adanya ke data/raw/ dengan nama rates_<YYYY-MM-DD_HHMMSS>.json. Foldernya dibuat lewat kode.
+4. Fungsi mengembalikan alamat file yang disimpan.
+5. Bagian __main__ memanggilnya. Kalau gagal, muncul pesan error yang jelas (print atau logging, terserah kamu) dan tidak ada pesan sukses palsu.
+6. Dijalankan dari terminal, dari folder utama proyek.
+
+### Evaluation
+Lulus: semuanya berjalan, atau ada paling banyak beberapa komentar # lupa: yang tidak menghalangi hasil akhir.
+Belum lulus: ada bagian inti yang tidak jalan dalam 30 menit. Itu bukan kegagalan; sesuai aturan kita, ulangi bagian yang lemah dulu, baru tes lagi besok.
+
+### 🧩Problem
+Ternyata kalo di tes tanpa bantuan ai ataupun hasil coding dari code sebelumnya gua masih ga ada apa apa nya...
+buka file di catatan.md untuk perbaikan nanti
+
+### ✅ Status
+Gagal, besok di perbaiki minggu 1 belum lulus.
