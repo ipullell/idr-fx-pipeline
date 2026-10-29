@@ -152,8 +152,8 @@ Karna kalo cuman print (e) itu hanya muncul 1 kali di terminal dan akan susah un
 6. Dijalankan dari terminal, dari folder utama proyek.
 
 ### Evaluation
-Lulus: semuanya berjalan, atau ada paling banyak beberapa komentar # lupa: yang tidak menghalangi hasil akhir.
-Belum lulus: ada bagian inti yang tidak jalan dalam 30 menit. Itu bukan kegagalan; sesuai aturan kita, ulangi bagian yang lemah dulu, baru tes lagi besok.
+- Lulus: semuanya berjalan, atau ada paling banyak beberapa komentar # lupa: yang tidak menghalangi hasil akhir.
+- Belum lulus: ada bagian inti yang tidak jalan dalam 30 menit. Itu bukan kegagalan; sesuai aturan kita, ulangi bagian yang lemah dulu, baru tes lagi besok.
 
 ### 🧩Problem
 Ternyata kalo di tes tanpa bantuan ai ataupun hasil coding dari code sebelumnya gua masih ga ada apa apa nya...
@@ -161,3 +161,21 @@ buka file di catatan.md untuk perbaikan nanti
 
 ### ✅ Status
 Gagal, besok di perbaiki minggu 1 belum lulus.
+
+---
+
+## Day 8 · 29 October 2026 > _"Evaluasi materi yg belum di kuasai"_
+
+### 🧩Problem
+Hari ini gua ga akan mengulangi ujian nya, karna gua sadar di ujian sebelumnya gua masih kurang memahami dan ada sebagian yg lupa jdi hari ini gua fix kode sebelumnya dan ada beberapa perbaikan di kode gua termasuk jika kode gua di jalankan di luar folder src misal `C:/dataengineer/src/exam.py` dan gua menjalankan nya di folder dataengineer `py src/exam.py` maka program gua ga akan membuat folder data dan logs maka dari itu gua akan memperbaiki nya dengan kode di bawah ini.
+
+### 🎯 Task
+1. Ganti alamat data dan logs di kodemu memakai BASE_DIR.
+2. Jalankan dari tiga tempat tadi. Lulus kalau hasilnya selalu muncul di data/raw dan logs milik proyekmu, tidak ada folder nyasar di tempat lain.
+3. Hapus tes_alamat.py setelah selesai, atau simpan di luar src.
+
+### ✅ Status
+Selesai, sekarang extract bisa relatif di jalankan di folder mana saja, karna udh di tambahkan BASE_DIR yg baru aja gua pelajarin. Besok kita lanjut UJIAN kelulusan minggu 1(yg udh kelewat deadline 4 hari...).
+
+---
+

@@ -59,7 +59,7 @@ idr-fx-pipeline/
 │   ├── transform.py    # planned
 │   ├── load.py         # planned
 │   └── main.py         # planned: runs the full pipeline
-├── data/               # local data, not committed
+├── data/               # results
 │   └── raw/
 ├── requirements.txt
 └── README.md
