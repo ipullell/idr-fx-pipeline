@@ -164,7 +164,7 @@ Gagal, besok di perbaiki minggu 1 belum lulus.
 
 ---
 
-## Day 8 · 29 October 2026 > _"Evaluasi materi yg belum di kuasai"_
+## Day 8 · 29 October 2026 > _"Evaluasi materi yg belum di kuasai sesi 1"_
 
 ### 🧩Problem
 Hari ini gua ga akan mengulangi ujian nya, karna gua sadar di ujian sebelumnya gua masih kurang memahami dan ada sebagian yg lupa jdi hari ini gua fix kode sebelumnya dan ada beberapa perbaikan di kode gua termasuk jika kode gua di jalankan di luar folder src misal `C:/dataengineer/src/exam.py` dan gua menjalankan nya di folder dataengineer `py src/exam.py` maka program gua ga akan membuat folder data dan logs maka dari itu gua akan memperbaiki nya dengan kode di bawah ini.
@@ -175,7 +175,28 @@ Hari ini gua ga akan mengulangi ujian nya, karna gua sadar di ujian sebelumnya g
 3. Hapus tes_alamat.py setelah selesai, atau simpan di luar src.
 
 ### ✅ Status
-Selesai, sekarang extract bisa relatif di jalankan di folder mana saja, karna udh di tambahkan BASE_DIR yg baru aja gua pelajarin. Besok kita lanjut UJIAN kelulusan minggu 1(yg udh kelewat deadline 4 hari...).
+Selesai, sekarang extract bisa relatif di jalankan di folder mana saja, karna udh di tambahkan BASE_DIR yg baru aja gua pelajarin. Besok kita lanjut tanpa melihat kode dari sesi sebelumnya. baru ujian kelulusan minggu 1.
 
 ---
 
+## Day 9 · 30 October 2026 > _"Evaluasi materi yg belum di kuasai sesi 2"_
+
+
+### 🎯 Task > *_20-30 menit, pakai timer_*
+
+Tulis tiga potongan, masing-masing di file latihanmu. Kalau lupa sintaks, tulis # lupa: ... dan lanjut.
+
+1. Menyimpan JSON. Fungsi simpan_json(data) yang membuat folder data/raw lewat kode, menyimpan data ke file bernama latihan_<YYYY-MM-DD_HHMMSS>.json, dan mengembalikan alamat file. Panggil dengan dictionary buatanmu, lalu baca kembali dan cetak isinya.
+
+2. Logging. Atur logging ke logs/latihan.log dengan format waktu, tingkat, dan pesan. Catat satu pesan INFO, WARNING, dan ERROR.
+
+3. Error requests. Panggil API Frankfurter di dalam try/except yang menangkap error requests, dan catat error-nya dengan logging. Uji dengan sengaja mengubah nama domain supaya gagal.
+
+- BASE_DIR boleh dipakai sebagai bonus, bukan syarat.
+
+
+### 🧩Problem
+Gaada masalah yg besar gua cuman lupa dengan beberapa sintaks tetapi tidak menyebabkan error yg besar untuk sekrang, gua lupa di bagian respon.raise_for_status tidak memiliki tanda kurung. sehingga tidak akan mengembalikan error ke except. itu aja sih, sama gua ngebaca file nya dulu sebelum gua tes jadi gua lumayan ingat, dan gua melewatkan -+15 detik dari waktu yg di tetapkan.
+
+### ✅ Status
+sukses, besok gua lanjutkan Ujian minggu 1 
