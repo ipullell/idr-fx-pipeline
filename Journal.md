@@ -182,7 +182,7 @@ Selesai, sekarang extract bisa relatif di jalankan di folder mana saja, karna ud
 ## Day 9 · 30 October 2026 > _"Evaluasi materi yg belum di kuasai sesi 2"_
 
 
-### 🎯 Task > *_20-30 menit, pakai timer_*
+### 🎯 Task > _20-30 menit, pakai timer_
 
 Tulis tiga potongan, masing-masing di file latihanmu. Kalau lupa sintaks, tulis # lupa: ... dan lanjut.
 
@@ -199,4 +199,52 @@ Tulis tiga potongan, masing-masing di file latihanmu. Kalau lupa sintaks, tulis 
 Gaada masalah yg besar gua cuman lupa dengan beberapa sintaks tetapi tidak menyebabkan error yg besar untuk sekrang, gua lupa di bagian respon.raise_for_status tidak memiliki tanda kurung. sehingga tidak akan mengembalikan error ke except. itu aja sih, sama gua ngebaca file nya dulu sebelum gua tes jadi gua lumayan ingat, dan gua melewatkan -+15 detik dari waktu yg di tetapkan.
 
 ### ✅ Status
-sukses, besok gua lanjutkan Ujian minggu 1 
+sukses, besok gua lanjutkan Ujian minggu 1
+
+---
+
+## Day 10 · 31 October 2026 > _"UJIAN MINGGU 1"_
+
+### 🚫 The Rules:
+1. File kosong yang baru, misalnya src/retest.py. Jangan buka extract.py, exam.py, catatan.md, atau chat ini selama mengerjakan.
+2. 30 menit, pakai timer. Tanpa catatan dan tanpa AI. Boleh membaca pesan error Python.
+3. Lupa sintaks? Tulis # lupa: ... dan lanjut. Jujur di sini lebih berharga daripada hasil yang bagus.
+4. Sebelum mulai, git pull kalau kamu pindah device.
+
+### 🎯 Task > _30 Menit_
+1. Fungsi extract() yang memanggil https://api.frankfurter.dev/v2/rates dengan timeout.
+2. Status buruk dianggap error.
+3. Isi respons disimpan apa adanya ke data/raw/ dengan nama rates_<YYYY-MM-DD_HHMMSS>.json. Foldernya dibuat lewat kode.
+4. Fungsi mengembalikan alamat file.
+5. Logging ke file logs/pipeline.log dengan format waktu, tingkat, dan pesan.
+6. Bagian __main__ memanggil extract(), menangkap error requests, dan mencatatnya. Tidak boleh ada pesan sukses kalau gagal.
+7. Dijalankan dari terminal.
+
+### 🧩Problem
+Dua masalah di satu baris:
+
+- LOG_FILE adalah alamat file, dan mkdir hanya untuk folder. Python akan mencoba membuat folder bernama pipline.log.
+- .parent ditaruh sesudah mkdir, padahal mkdir mengembalikan None. Urutannya terbalik: naik ke folder induk dulu, baru buat.
+
+gua remed waktu 15 menit. dengan tugas:
+
+````
+from pathlib import Path
+A = Path("proyek") / "data" / "raw"
+B = Path("proyek") / "logs" / "pipeline.log"
+
+````
+- Mana di antara A dan B yang alamat folder, dan mana yang alamat file?
+- Apa hasil print(B.parent)?
+- Baris mana yang benar untuk membuat folder logs: B.mkdir(...) atau B.parent.mkdir(...)? Kenapa?
+- Kalau A.mkdir(exist_ok=True) dijalankan dan folder proyek belum ada, apa yang terjadi? Apa yang kurang?
+
+1. Kerjakan latihan di atas (tebak dulu, jalankan sesudahnya).
+2. Mini-tes ulang 15 menit, hanya bagian logging: di file kosong, tanpa catatan, atur logging ke logs/pipeline.log, buat foldernya dengan benar, lalu catat satu pesan INFO dan satu ERROR. Kriterianya: file log benar-benar terbentuk dan terisi.
+3. Kalau itu lulus, Minggu 1 kuanggap tutup, karena sisanya sudah kamu tunjukkan hari ini dan Kamis.
+4. Senin mulai ulangan SQL.
+
+dan akhirnya gua gagall dalam ujian dan remed nya tetapi di luluskan secara paham gua ciealah ga keren bgt. oek jadi ntar gua akan lanjut latihan besok 10 menit tentang materi ini sbelum belajar lagi. gua tadi kebingungan di bagian membuat folder otomatis karna masalah parent" tadi.
+
+### ✅ Status
+Diluluskan dengan remedial dan tes yg membantu memahami lebih dalam.
