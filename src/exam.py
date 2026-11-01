@@ -29,7 +29,7 @@ def extract():
     
 
 if __name__ == "__main__":
-    LOG_FILE.mkdir(exist_ok=True).parent
+    LOG_FILE.parent.mkdir(exist_ok=True)
     logging.basicConfig(
         filemode= 'a',
         level= "INFO",

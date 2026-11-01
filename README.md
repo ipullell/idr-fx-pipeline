@@ -98,7 +98,7 @@ Each run saves one file such as `data/raw/rates_2026-10-23_095700.json` and prin
 ## Roadmap
 
 - [x] **Week 1: Extract.** Fetch rates with `requests`, save raw JSON with a timestamped name
-- [ ] Week 1: Error handling and logging (timeouts, bad status codes, API down)
+- [x] **Week 1: Error handling and logging** (timeouts, bad status codes, API down)
 - [ ] **Week 2: Transform and load.** Clean data with pandas, design the table schema, load into PostgreSQL
 - [ ] **Week 3: Reliability.** Retry, idempotent loads, incremental loading
 - [ ] **Week 4: Automation.** Daily scheduling, basic validation, tests, documentation

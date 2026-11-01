@@ -248,3 +248,15 @@ dan akhirnya gua gagall dalam ujian dan remed nya tetapi di luluskan secara paha
 
 ### ✅ Status
 Diluluskan dengan remedial dan tes yg membantu memahami lebih dalam.
+
+---
+
+## Day 11 · 01 November 2026 >
+
+### 🎯 Task 
+
+- Gua ngulang exam kemaren tanpa batas waktu dan tanpa melihat kode
+- lanjut ke materi minggu 2.
+
+### Status
+Selesai dan sukses, lanjut ke materi minggu ke 2.
