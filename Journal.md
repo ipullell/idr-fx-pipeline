@@ -251,7 +251,7 @@ Diluluskan dengan remedial dan tes yg membantu memahami lebih dalam.
 
 ---
 
-## Day 11 · 01 November 2026 >
+
 
 ### 🎯 Task 
 
@@ -260,3 +260,38 @@ Diluluskan dengan remedial dan tes yg membantu memahami lebih dalam.
 
 ### Status
 Selesai dan sukses, lanjut ke materi minggu ke 2.
+
+---
+
+## Day 12 · 02 November 2026 > *_Materi Minggu 2_*
+
+### Objective
+1. Tampilkan semua kolom dan semua baris.
+2. Tampilkan hanya quote dan rate, dengan rate beralias kurs.
+3. Tampilkan daftar quote yang unik, urut A-Z.
+4. Tampilkan baris dengan quote = 'IDR'.
+5. Tampilkan baris dengan rate di atas 100, dari yang terbesar.
+6. Tampilkan baris yang quote-nya salah satu dari tiga kode pilihanmu.
+7. Tampilkan tiga baris dengan rate terbesar.
+8. Hitung total baris di tabel.
+
+### Gate
+1. Apa beda WHERE dan ORDER BY?
+2. Apa yang berbeda pada hasil dengan dan tanpa DISTINCT?
+3. Tulis ulang query nomor 5 tanpa melihat catatan.
+
+### Problem
+gua kesusahan karna harus set up database dulu, gua aga bingung metode belajar yg cocok digunakan untuk belajar sql ini. jadi gua memakai 2 pendekatan yaitu gua minta ai untuk menjelaskan materi yg akan di pelajari hari ini, kemudian memberikan contoh penggunaan nya lalu memberikan tugas yg berbeda dari contoh yg mencakup dari materi yg udh di sebutkan di awal. sebenarnya gua aga benci ama sql ini karna meskipun query nya sedikit tetapi gua kesusahan di bagian entahlahh gua mungkin cuman belum terbiasa.
+
+### Status
+Belum terverivikasi oleh ai claude karna rate limit gua abis. nih gua jawab gate nya
+- where itu fungsi nya kek ngefilter gitulah data mana yg mau di tampilkan, sedangkan order by itu cara nampilin nya mau urut a-z atau sebaliknya.
+- dalam pemograman gua sekarang gua belum ada pake distinct sih, keknya ada yg salah tetapi nanti aja nunggu verif ai besok.
+- gampang.
+
+select rate from rates
+where rate > 100
+order by rate desc
+
+---
+
