@@ -327,3 +327,33 @@ gua bingung metode belajar sql yg cocok untuk gua.
 
 ### Status
 selesai, tetapi masih perlu belajar lebih tentang fundamental nya
+
+### Belajar tambahan
+
+**Peta SQL: struktur, kondisi, dan tanda baca**
+
+1. Beda cara pikir SQL dan Python
+2. Urutan klausa (potongan kalimat) dalam satu query
+3. Urutan kerja database (beda dengan urutan penulisan)
+4. Tanda baca: ' " () , ; * --
+5. Operator kondisi di WHERE
+6. Aturan fungsi agregat
+
+GATE:
+1. Tulis urutan klausa dari ingatan, lengkap dengan tugas masing-masing dalam satu frasa.
+2. Kenapa WHERE tidak boleh memakai AVG(...)?
+3. Apa beda 'USD' dan "USD" di SQL?
+
+### answer
+1. 
+
+* select (untuk mengambil suatu kolom)
+* from (tabel tujuan)
+* where (filter data apa yg mau di filter)
+* group by (mengelompokan data berdasarkan group)
+* having (memfilter data dengan agregat setelah dikelompokan)
+* order by (mengurutkan data dari a-z atau sebaliknya)
+* limit (membatasi menampilkan data sesuai yg user mau)
+
+2. agregat butuh banyak baris sekaligus (satu kelompok), sedangkan WHERE hanya melihat satu baris. Karena itu agregat hanya bisa dipakai di HAVING (atau SELECT). <!--- jawaban dari ai --->
+3. 'usd' dengan string satu menandakan sebuah data di suatu baris, sedangkan "usd" dengan dua string menandakan nama kolom. jadi sql bisa salah paham jika salah tulis.
