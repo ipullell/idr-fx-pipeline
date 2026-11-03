@@ -284,14 +284,45 @@ Selesai dan sukses, lanjut ke materi minggu ke 2.
 gua kesusahan karna harus set up database dulu, gua aga bingung metode belajar yg cocok digunakan untuk belajar sql ini. jadi gua memakai 2 pendekatan yaitu gua minta ai untuk menjelaskan materi yg akan di pelajari hari ini, kemudian memberikan contoh penggunaan nya lalu memberikan tugas yg berbeda dari contoh yg mencakup dari materi yg udh di sebutkan di awal. sebenarnya gua aga benci ama sql ini karna meskipun query nya sedikit tetapi gua kesusahan di bagian entahlahh gua mungkin cuman belum terbiasa.
 
 ### Status
-Belum terverivikasi oleh ai claude karna rate limit gua abis. nih gua jawab gate nya
+Berhasil setelah revisi, karna arahan dan perintah ai (claude) nya aga rancu jadi gua juga salah ngartiin nya. nih gua jawab gate nya: 
 - where itu fungsi nya kek ngefilter gitulah data mana yg mau di tampilkan, sedangkan order by itu cara nampilin nya mau urut a-z atau sebaliknya.
 - dalam pemograman gua sekarang gua belum ada pake distinct sih, keknya ada yg salah tetapi nanti aja nunggu verif ai besok.
 - gampang.
 
+````
 select rate from rates
 where rate > 100
 order by rate desc
+````
 
 ---
 
+## Day 13 · 03 November 2026 > *_Materi Minggu 2_*
+
+### Objective _NULL, AND/OR, GROUP BY_
+
+IS NULL dan IS NOT NULL: mencari nilai kosong
+AND, OR, dan kurung
+COUNT(*) vs COUNT(kolom)
+AVG, SUM, MIN, MAX
+GROUP BY: satu baris hasil per kelompok
+HAVING: memfilter hasil kelompok
+
+### 🎯 Task 
+1. Tampilkan baris yang rate-nya kosong. (petunjuk: IS NULL)
+2. Tampilkan baris yang rate-nya tidak kosong.
+3. Tampilkan baris tanggal '2026-10-22' yang rate-nya di atas 100.
+4. Tampilkan baris yang quote-nya USD atau GBP, dan tanggalnya '2026-10-22'.
+5. Tampilkan COUNT(*) dan COUNT(rate) dalam satu query.
+6. Tampilkan jumlah baris per quote (kolom: quote, jumlah).
+7. Tampilkan quote dan rata-rata rate-nya per quote, hanya yang rata-ratanya di atas 100.
+
+### Gate
+1. Kalau di nomor 4 kurungnya dihilangkan (quote = 'USD' OR quote = 'GBP' AND date = '2026-10-22'), hasilnya berapa baris, dan kenapa?
+2. Kenapa WHERE rate = NULL menghasilkan 0 baris?
+3. Apa beda WHERE dan HAVING? Jelaskan dengan kalimatmu sendiri.
+
+### Problem
+
+
+### Status

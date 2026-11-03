@@ -1,4 +1,4 @@
--- Create Tabel pesanan
+-- Create Tabel pesanan 
 CREATE TABLE pesanan (id INTEGER, pelanggan TEXT, kota TEXT, total NUMERIC);
 INSERT INTO pesanan VALUES
  (1, 'Ani',   'Banjarmasin', 50000),
