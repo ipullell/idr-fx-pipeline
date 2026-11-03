@@ -323,6 +323,7 @@ HAVING: memfilter hasil kelompok
 3. Apa beda WHERE dan HAVING? Jelaskan dengan kalimatmu sendiri.
 
 ### Problem
-
+gua bingung metode belajar sql yg cocok untuk gua.
 
 ### Status
+selesai, tetapi masih perlu belajar lebih tentang fundamental nya

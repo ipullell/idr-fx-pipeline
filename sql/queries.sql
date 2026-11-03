@@ -1,40 +1,41 @@
--- DAY 1 RECOVER QUERIES
+-- DAY 2 NULL, AND/OR, GROUP BY
 
--- Tampilkan semua kolom dan semua baris.
+-- 1. Tampilkan baris yang rate-nya kosong. (petunjuk: IS NULL)
 
-SELECT * from rates; -- salah karna gua pake pesanan sebelumnya harusnya rates
+SELECT * FROM rates
+WHERE rate IS NULL;
 
--- Tampilkan hanya quote dan rate, dengan rate beralias kurs.
+-- 2. Tampilkan baris yang rate-nya tidak kosong.
 
-SELECT quote, rate as kurs from rates;
+SELECT * FROM rates
+WHERE rate IS NOT NULL;
 
--- Tampilkan daftar quote yang unik, urut A-Z.
+-- 3. Tampilkan baris tanggal '2026-10-22' yang rate-nya di atas 100.
 
-SELECT DISTINCT quote from rates ORDER BY quote;
+SELECT *
+FROM rates
+WHERE rate > 100 AND date = '2026-10-22';
 
--- Tampilkan baris dengan quote = 'IDR'.
+-- 4. Tampilkan baris yang quote-nya USD atau GBP, dan tanggalnya '2026-10-22'.
 
-SELECT * from rates
-where quote = 'IDR';
+SELECT *
+FROM rates
+WHERE (quote = 'USD' OR quote = 'GBP') AND date = '2026-10-22';
 
--- Tampilkan baris dengan rate di atas 100, dari yang terbesar.
+-- 5. Tampilkan COUNT(*) dan COUNT(rate) dalam satu query.
 
-SELECT * from rates
-where rate > 100
-ORDER BY rate DESC;
+SELECT COUNT(*), COUNT(rate)
+from rates;
 
--- Tampilkan baris yang quote-nya salah satu dari tiga kode pilihanmu.
+-- 6. Tampilkan jumlah baris per quote (kolom: quote, jumlah).
 
-SELECT * FROM rates 
-WHERE quote IN ('IDR', 'JPY', 'USD');
+SELECT quote, COUNT(*) AS jumlah
+FROM rates
+GROUP BY quote;
 
--- Tampilkan tiga baris dengan rate terbesar.
+-- 7. Tampilkan quote dan rata-rata rate-nya per quote, hanya yang rata-ratanya di atas 100.
 
-SELECT * from rates
-ORDER BY rate desc
-where is not null
-limit 3; -- (2 di awal yg tampil adalah null)
-
--- Hitung total baris di tabel.
-
-SELECT COUNT(*) from rates
+SELECT quote, AVG(rate) as rata_rata
+FROM rates
+GROUP BY quote
+HAVING AVG(rate) > 100;
