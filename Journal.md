@@ -345,15 +345,42 @@ GATE:
 3. Apa beda 'USD' dan "USD" di SQL?
 
 ### answer
-1. 
-
-* select (untuk mengambil suatu kolom)
-* from (tabel tujuan)
-* where (filter data apa yg mau di filter)
-* group by (mengelompokan data berdasarkan group)
-* having (memfilter data dengan agregat setelah dikelompokan)
-* order by (mengurutkan data dari a-z atau sebaliknya)
-* limit (membatasi menampilkan data sesuai yg user mau)
+1.  * select (untuk mengambil suatu kolom)
+    * from (tabel tujuan)
+    * where (filter data apa yg mau di filter)
+    * group by (mengelompokan data berdasarkan group)
+    * having (memfilter data dengan agregat setelah dikelompokan)
+    * order by (mengurutkan data dari a-z atau sebaliknya)
+    * limit (membatasi menampilkan data sesuai yg user mau)
 
 2. agregat butuh banyak baris sekaligus (satu kelompok), sedangkan WHERE hanya melihat satu baris. Karena itu agregat hanya bisa dipakai di HAVING (atau SELECT). <!--- jawaban dari ai --->
 3. 'usd' dengan string satu menandakan sebuah data di suatu baris, sedangkan "usd" dengan dua string menandakan nama kolom. jadi sql bisa salah paham jika salah tulis.
+
+---
+
+## Day 14 · 04 November 2026 > *_Materi Minggu 2_*
+
+### Problem
+Hari ini gua mulai ulang dari awal karna yaa ai gua ngasih materi nya ngaco gua ga paham, dan instruksi nya susah di pahami. jadi gua mulai materi sql dari 0 lagi. gapapa sih yg penting paham aja dulu.
+
+### Objective
+- apa itu tabel
+- FROM dan SELECT
+
+### Task <!-- result at file queries.sql -->
+1. Tampilkan semua kolom dan semua baris. (hasil yang harus cocok: 14 baris, 4 kolom)
+2. Tampilkan hanya kolom quote dan rate. (14 baris, 2 kolom)
+3. Tampilkan kolom rate, quote, date dengan urutan itu. (14 baris, 3 kolom)
+
+### Gate
+1. Jelaskan dengan kata-katamu: apa tugas FROM dan apa tugas SELECT?
+2. Apakah SELECT quote FROM rates; mengurangi jumlah baris? Kenapa?
+3. Tulis dari nol: tampilkan kolom base dan quote dari tabel rates.
+
+### Status
+Berhasil, semoga ga ganti metode lagi dah, kalo semakin hari semakin ga jelas instruksi nya gua bakal migrasi ke chat gpt buat jadi guru belajar gua.
+
+**Gate**
+1. FROM tugasnya untuk menunjuk ke tabel tujuan ,sedangkan select tugasnya untuk mengambil kolom dari tabel yg di tulis di from.
+2. ga, karna select quote cuman mengambil kolom quote tanpa mengurangi isi baris nya. dan from rates cuman rujukan tabel mana yg ingin di ambil.
+3. SELECT base, quote FROM rates;
