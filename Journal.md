@@ -384,3 +384,33 @@ Berhasil, semoga ga ganti metode lagi dah, kalo semakin hari semakin ga jelas in
 1. FROM tugasnya untuk menunjuk ke tabel tujuan ,sedangkan select tugasnya untuk mengambil kolom dari tabel yg di tulis di from.
 2. ga, karna select quote cuman mengambil kolom quote tanpa mengurangi isi baris nya. dan from rates cuman rujukan tabel mana yg ingin di ambil.
 3. SELECT base, quote FROM rates;
+
+---
+
+## Day 15 · 05 November 2026 > *_Materi Minggu 2_*
+
+### Objective
+Where and Operator perbandingan ">, <, =, >=, <=, <>"
+
+### Task <!-- result at file queries.sql -->
+1. Tampilkan semua kolom untuk baris yang quote-nya 'IDR'. (2 baris: tanggal 21 dan 22)
+2. Tampilkan quote dan rate untuk baris yang rate-nya lebih besar dari 100. (4 baris: IDR dua kali, JPY dua kali)
+3. Tampilkan semua kolom untuk baris yang date-nya '2026-10-22'. (7 baris)
+4. Tampilkan semua kolom untuk baris yang quote-nya bukan 'XAU'. (12 baris)
+5. Tampilkan quote dan rate untuk baris yang rate-nya 4.253 atau lebih. (6 baris)
+
+### Gate
+1. Jelaskan dengan kata-katamu: apa tugas WHERE, dan apa yang terjadi pada baris yang tidak memenuhi syaratnya?
+2. Apa beda > dan >=? Beri contoh dari tabel pesanan.
+3. Tulis dari nol (tabel rates): tampilkan kolom quote dan rate untuk baris yang quote-nya 'GBP'.
+
+### Status
+berhasil dengan sedikit catatan saat menjelaskan gate no 1. jika where tidak memenuhi syarat maka tidak akan terjadi error.
+**Gate**
+1. where tugasnya adalah untuk menyaring baris dengan syarat tertentu, jika tidak memenuhi syarat maka tidak terjadi apa apa.
+2. "> berarti lebih dari, sedangkan >= artinya lebih dari sama dengan yg berarti jika di bandingkan 2>2 gagal sedangkan 2>=2 benar."
+3. select quote, rate from rates where quote = 'GBP';
+
+### Problem
+experience ai gua dengan claude lumayan sih tpi menurut gua jika ingin belajar dengan santai gua sarankan chat gpt sih karna penjelasan nya mudah di pahami dan tidak terlalu kaku juga. oke gua ganti ai buat pengajar gua.
+"Catatan ai: baris yang kolom syaratnya NULL (seperti total milik Dedi) tidak lolos perbandingan apa pun. Alasan lengkapnya kita bahas di Day 16", Jadi penasaran gua...
