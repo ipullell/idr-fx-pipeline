@@ -1,13 +1,26 @@
--- DAY 14 Table, FROM, SELECT
+-- DAY 15 WHERE
 
--- 1. Tampilkan semua kolom dan semua baris. (hasil yang harus cocok: 14 baris, 4 kolom)
+-- 1. Tampilkan semua kolom untuk baris yang quote-nya 'IDR'. (2 baris: tanggal 21 dan 22)
 
-SELECT * FROM rates;
+select * from rates
+where quote = 'IDR';
 
--- 2. Tampilkan hanya kolom quote dan rate. (14 baris, 2 kolom)
+-- 2. Tampilkan quote dan rate untuk baris yang rate-nya lebih besar dari 100. (4 baris: IDR dua kali, JPY dua kali)
 
-SELECT quote, rate FROM rates;
+select quote, rate from rates
+where rate > 100;
 
--- 3. Tampilkan kolom rate, quote, date dengan urutan itu. (14 baris, 3 kolom)
+-- 3. Tampilkan semua kolom untuk baris yang date-nya '2026-10-22'. (7 baris)
 
-SELECT rate, quote, "date" FROM rates;
+select * from rates
+where date = '2026-10-22';
+
+-- 4. Tampilkan semua kolom untuk baris yang quote-nya bukan 'XAU'. (12 baris)
+
+select * from rates
+where quote <> 'XAU';
+
+-- 5. Tampilkan quote dan rate untuk baris yang rate-nya 4.253 atau lebih. (6 baris)
+
+select quote, rate from rates
+where rate >= 4.253;
