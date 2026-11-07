@@ -414,3 +414,46 @@ berhasil dengan sedikit catatan saat menjelaskan gate no 1. jika where tidak mem
 ### Problem
 experience ai gua dengan claude lumayan sih tpi menurut gua jika ingin belajar dengan santai gua sarankan chat gpt sih karna penjelasan nya mudah di pahami dan tidak terlalu kaku juga. oke gua ganti ai buat pengajar gua.
 "Catatan ai: baris yang kolom syaratnya NULL (seperti total milik Dedi) tidak lolos perbandingan apa pun. Alasan lengkapnya kita bahas di Day 16", Jadi penasaran gua...
+
+---
+
+## Day 16 · 06 November 2026 > *_Materi Minggu 2_*
+
+### Objective _Apa sebenarnya NULL?_
+1. Memahami apa itu NULL dan kenapa berbeda dari angka 0 atau string kosong.
+2. Memahami kenapa NULL tidak bisa dibandingkan menggunakan =, >, atau <> seperti nilai biasa.
+3. Memahami cara menggunakan IS NULL dan IS NOT NULL.
+4. Mampu memfilter data yang memiliki nilai kosong di tabel rates dan pesanan.
+
+### Gate
+1. Apa perbedaan NULL dan 0?
+2. Kenapa WHERE total = NULL tidak menghasilkan baris Dedi?
+3. Apa perbedaan IS NULL dan IS NOT NULL?
+4. Bisa menulis query untuk mencari semua data yang nilai rate-nya NULL.
+
+### Task <!-- result at file queries.sql -->
+1. Tampilkan seluruh kolom dari tabel rates yang memiliki rate NULL. (Mencari data NULL)
+2. Tampilkan quote dan rate dari tabel rates yang rate-nya tidak NULL. (Mencari data tersedia)
+3. Tampilkan semua pesanan yang totalnya NULL atau lebih besar dari 100000. (Gabungkan kondisi)
+4. Hitung jumlah seluruh pesanan dan jumlah pesanan yang memiliki total tersedia. Tampilkan keduanya dalam satu query. (Analisis data)
+
+### Problem
+no problem, Belajar menggunakan chat gpt dengan metode yg sesuai emang is the best dah i like it.
+
+### Status
+1. bedanya yaitu 0 adalah 0 yg berarti nilainya ya 0 tipe datanya adalah integer, sedangkan NULL itu artinya nilainya tidak di ketahui, bukan 0 (int) ataupun '0' (string)
+2. Karna jika membandingkan NULL APAKAH = NULL akan menghasilkan nilai UNKNOWN (bukan true ataupun false), untuk membandingkan/ mencari nilai NULL itu  sebaiknya menggunakan IS NULL.
+3. IS NULL adalah cara untuk mencari baris yg isinya NULL, sedangkan IS NOT NULL adalah cara untuk mencari yg baris nya tidak NULL
+4. oke gampang kok. 
+
+```
+SELECT * FROM rates WHERE rate IS NULL;
+```
+
+### Next
+1. Cara kerja AND.
+2. Cara kerja OR.
+3. Perbedaan hasil ketika menggunakan dan tidak menggunakan tanda kurung.
+4. Penerapannya pada tabel rates dan pesanan.
+
+--- 
