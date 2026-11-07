@@ -1,26 +1,25 @@
--- DAY 15 WHERE
+-- DAY 16 WHAT IS THE NULL?
 
--- 1. Tampilkan semua kolom untuk baris yang quote-nya 'IDR'. (2 baris: tanggal 21 dan 22)
+-- 1. Tampilkan seluruh kolom dari tabel rates yang memiliki rate NULL.
 
-select * from rates
-where quote = 'IDR';
+SELECT *
+FROM rates
+WHERE rate IS NULL;
 
--- 2. Tampilkan quote dan rate untuk baris yang rate-nya lebih besar dari 100. (4 baris: IDR dua kali, JPY dua kali)
+-- 2. Tampilkan quote dan rate dari tabel rates yang rate-nya tidak NULL.
 
-select quote, rate from rates
-where rate > 100;
+SELECT *
+FROM rates
+WHERE rate IS NOT NULL;
 
--- 3. Tampilkan semua kolom untuk baris yang date-nya '2026-10-22'. (7 baris)
+-- 3. Tampilkan semua pesanan yang totalnya NULL atau lebih besar dari 100000.
 
-select * from rates
-where date = '2026-10-22';
+SELECT *
+FROM pesanan
+WHERE total IS NULL OR total > 100000;
 
--- 4. Tampilkan semua kolom untuk baris yang quote-nya bukan 'XAU'. (12 baris)
+-- 4. Hitung jumlah seluruh pesanan dan jumlah pesanan yang memiliki total tersedia. Tampilkan keduanya dalam satu query.
 
-select * from rates
-where quote <> 'XAU';
-
--- 5. Tampilkan quote dan rate untuk baris yang rate-nya 4.253 atau lebih. (6 baris)
-
-select quote, rate from rates
-where rate >= 4.253;
+SELECT COUNT(*) AS Jumlah_pesanan, SUM(total) AS Total_pesanan
+FROM pesanan
+WHERE total IS NOT NULL;
