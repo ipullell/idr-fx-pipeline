@@ -457,3 +457,87 @@ SELECT * FROM rates WHERE rate IS NULL;
 4. Penerapannya pada tabel rates dan pesanan.
 
 --- 
+
+## Day 17 · 09 November 2026 > *_Materi Minggu 2_*
+
+### Objective 
+Menjelaskan fungsi AND untuk menggabungkan beberapa kondisi.
+Menjelaskan fungsi OR untuk menggabungkan beberapa kondisi.
+Memahami kenapa kombinasi AND dan OR bisa menghasilkan data yang berbeda.
+Memahami prioritas pengerjaan AND dan OR.
+Menggunakan tanda kurung () untuk mengelompokkan kondisi.
+Membuat query dengan beberapa kondisi berdasarkan kebutuhan bisnis.
+
+### Gate
+1. Dalam kondisi seperti apa lu harus menggunakan AND?
+2. Dalam kondisi seperti apa lu harus menggunakan OR?
+3. Jika AND dan OR digunakan bersamaan tanpa tanda kurung, operator mana yang dikerjakan lebih dahulu?
+4. Apa risiko jika lu salah mengelompokkan kondisi menggunakan AND dan OR dalam pipeline data?
+5. Apa perbedaan tujuan query Task 3 dan Task 4?
+6. Jika lu menerima permintaan bisnis dalam bahasa manusia, bagaimana cara lu menentukan kondisi mana yang harus menggunakan AND, OR, dan tanda kurung?
+
+### Task
+Permintaan dari tim Finance:
+Kami sedang membuat laporan nilai tukar USD untuk tanggal 22 Oktober 2026. Tolong ambil seluruh informasi kurs USD pada tanggal tersebut dari database.
+
+Tugas lu:
+- Buat query untuk mengambil data yang diminta.
+- Gunakan AND untuk menggabungkan dua persyaratan.
+- Tampilkan seluruh kolom tabel.
+
+Task 2 — Data extraction untuk laporan regional
+Permintaan dari tim Business Intelligence:
+Kami ingin membandingkan nilai tukar USD dan GBP. Ambil semua data USD dan GBP yang tersedia di database, tanpa membatasi tanggal.
+
+Tugas lu:
+- Buat query untuk mengambil kedua mata uang tersebut.
+- Gunakan OR.
+- Tampilkan seluruh kolom tabel.
+Task 3 — Debugging query laporan yang salah
+Ticket DE-017-03 · Debugging
+Laporan dari tim Analytics:
+Kami membutuhkan semua data USD, tetapi untuk GBP kami hanya membutuhkan data tanggal 22 Oktober 2026. Query sebelumnya menghasilkan data yang tidak sesuai kebutuhan.
+
+Tugas lu:
+
+Buat query tanpa tanda kurung yang memenuhi permintaan tersebut.
+
+Kemudian jelaskan:
+1. Kondisi mana yang berlaku untuk semua data USD?
+2. Kondisi mana yang berlaku khusus untuk GBP?
+3. Mengapa query tersebut bisa menghasilkan data yang berbeda jika prioritas AND dan OR tidak dipahami?
+
+Task 4 — Data validation sebelum data dikirim ke Analytics
+Ticket DE-017-04
+Permintaan dari tim Data Quality:
+Sebelum data kurs dikirim ke sistem laporan, pastikan hanya data USD dan GBP untuk tanggal 22 Oktober 2026 yang diambil. Data dari tanggal lain tidak boleh ikut.
+
+Tugas lu:
+
+Buat query yang memenuhi permintaan tersebut dengan menggabungkan AND, OR, dan tanda kurung.
+
+Kemudian bandingkan secara logika dengan query pada Task 3.
+
+Task 5 — Filtering transaksi untuk laporan Finance
+Ticket DE-017-05 · Business case
+Permintaan dari tim Finance:
+Kami sedang menyiapkan laporan transaksi bernilai tinggi untuk dua wilayah operasional, yaitu Banjarmasin dan Makassar. Ambil transaksi dari kedua kota tersebut, tetapi hanya transaksi dengan total lebih dari Rp75.000.
+
+Tugas lu:
+
+Buat query dari tabel pesanan dengan ketentuan:
+- Hanya transaksi dari dua kota yang diminta.
+- Nilai transaksi harus lebih dari Rp75.000.
+- Gunakan AND, OR, dan tanda kurung.
+- Tampilkan seluruh kolom.
+
+### Problem
+Setelah 16 hari project ini jalan gua baru sadar... harusnya gua ga bikin 1 bulan 1 project tetapi untuk di awal gua hanya bikin 1 project pembelajaran untuk mengulang materi yg udh gua lupakan... lagipun roadmap belajar gua ini tidak sesuai dengan real case data engineer. harusnya kalo ingin juga pake metode project based learning roadmap nya ga kya roadmap-v2.md itu. harusnya kek dalam 1 bulan target awal bikin pipeline set up database dan gimana gitu. nah gua ingin pindah project tapi gua harus menyelesaikan project ini dulu sampai gua benar" memahami dan mengerti sesuai roadmap jadi gua selesaikan dulu dah. untuk hari ini gaaada measalah gua cuman lupa" dikit doang karna gua udh pernah belajra tentang ini di bulan maret kemaren.
+
+### Status
+1. Ketika gua ingin menampilkan suatu hal dengan aturan yg harus memenuhi kriteria tertentu.
+2. Ketika gua ingin menampilkan 2 hal sekaligus
+3. Operator AND setelah itu baru operator OR, kecuali OR menggunakan tanda kurung.
+4. Data hasil filter AND ataupun OR tidak sesuai dengan kebutuhan.
+5. Bedanya di query task 3 disuruh menampilkan data USD tanpa filter tanggal, sedangkan query Task 4 disuruh filter tanggal. dua duanya disuruh menampilkan data GBP juga tetapi sama sama disuruh filter tanggal.
+6. gampang tinggal analisis kebutuhan nya apakah disuruh ngefilter atau menampilkan hanya data tertentu doang. asalkan perintah nya jelas gua paham aja.
