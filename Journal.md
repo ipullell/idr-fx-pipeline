@@ -541,3 +541,92 @@ Setelah 16 hari project ini jalan gua baru sadar... harusnya gua ga bikin 1 bula
 4. Data hasil filter AND ataupun OR tidak sesuai dengan kebutuhan.
 5. Bedanya di query task 3 disuruh menampilkan data USD tanpa filter tanggal, sedangkan query Task 4 disuruh filter tanggal. dua duanya disuruh menampilkan data GBP juga tetapi sama sama disuruh filter tanggal.
 6. gampang tinggal analisis kebutuhan nya apakah disuruh ngefilter atau menampilkan hanya data tertentu doang. asalkan perintah nya jelas gua paham aja.
+
+### Next
+SQL Aggregate Functions, GROUP BY, dan HAVING
+
+--- 
+
+## Day 18 · 11 November 2026 > *_Materi Minggu 2_*
+
+### Objective > "SQL Aggregate Functions, GROUP BY, dan HAVING"
+1. Memahami fungsi agregat untuk meringkas banyak baris menjadi satu nilai.
+2. Menggunakan COUNT(), SUM(), AVG(), MIN(), dan MAX().
+3. Memahami cara GROUP BY membagi data menjadi kelompok.
+4. Memahami perbedaan WHERE dan HAVING.
+5. Membuat ringkasan data berdasarkan kebutuhan bisnis.
+
+### Gate
+1. Apa perbedaan COUNT(*) dan COUNT(kolom)?
+2. Apa perbedaan SUM() dan AVG()?
+3. Kenapa query SELECT kota, SUM(total) FROM pesanan; tidak cukup untuk menampilkan total per kota?
+4. Apa fungsi GROUP BY?
+5. Apa perbedaan WHERE dan HAVING?
+6. Jika sebuah kelompok hanya memiliki nilai NULL, apa yang akan terjadi pada hasil SUM() dan COUNT(kolom)?
+7. Dalam pipeline data, kenapa kita perlu menghitung jumlah record dan rata-rata nilai per kelompok?
+
+### Task
+#### 1. Ringkasan transaksi Finance
+Tim Finance ingin mengetahui ringkasan seluruh transaksi.
+
+Buat query yang menampilkan dalam satu baris:
+1. Jumlah seluruh transaksi.
+2. Jumlah transaksi yang memiliki nilai total.
+3. Total seluruh nilai transaksi.
+4. Rata-rata nilai transaksi.
+5. Nilai transaksi terkecil.
+6. Nilai transaksi terbesar.
+Gunakan fungsi agregat yang sesuai.
+
+#### 2. Laporan transaksi per wilayah
+Tim Regional meminta laporan jumlah dan total transaksi untuk masing-masing kota.
+
+Buat query yang menampilkan:
+- Nama kota.
+- Jumlah seluruh transaksi per kota.
+- Total nilai transaksi per kota.
+Gunakan GROUP BY.
+
+#### 3. Seleksi wilayah untuk laporan Finance
+Finance hanya ingin melihat kota yang memiliki total transaksi lebih dari Rp150.000.
+Buat query yang menampilkan nama kota dan total transaksi per kota.
+Gunakan GROUP BY dan HAVING.
+
+#### 4. Ticket DE-018-04 — Pemeriksaan kelengkapan kurs
+Tim Data Quality ingin mengetahui kondisi setiap mata uang.
+
+Buat query dari tabel rates yang menampilkan:
+- quote.
+- Jumlah seluruh record per mata uang.
+- Jumlah record yang memiliki rate tersedia.
+- Jumlah rata-rata rate per mata uang.
+Gunakan GROUP BY dan fungsi agregat yang sesuai.
+
+
+#### 5. Ticket DE-018-05 — Seleksi mata uang untuk Analytics
+Tim Analytics hanya ingin mengambil mata uang yang rata-rata kursnya lebih besar dari 100.
+
+Buat query yang menampilkan:
+- quote.
+- Rata-rata kurs.
+Gunakan GROUP BY dan HAVING.
+
+### Status
+#### Gate:
+1. - COUNT(*) << ini menghitung semua record yg ada di tabel meskipun ada record yg isinya null
+   - COUNT(kolom) << ini menghitung semua record yg ada di kolom rujukan tanpa menghitung record yg isinya null
+2. - SUM() << ini berfungsi untuk menghitung baris dengan cra menambah semua baris demi baris, null tidak ikut di hitung disini
+   - AVG() << ini fungsi nya untuk merata rata kan semua data di kolom rujukan dengan cara menambah nilai dari semua baris dan membagi dengan total baris tanpa null tidak ikut di hitung disini.
+3. Karna perbedaan fungsi nya bodoo, select tugasnya cuman buat nampilin kolom sedangkan klo ingin ngebuat case tampilkan total per kota itu harus di kelompokan terlebih dahulu, GROUP BY cocok dengan peran itu.
+4. mengelompokan data hasil aggregate
+5. Beda, karna where hanya menyaring data sebelum dikelompokkan,where tidak cocok untuk menyaring data setelah di kelompokkan. misal, mau menyaring data kota yg total transaksi nya melebihi batasan tertentu. ini tidak bisa di gunakan where karna total transaksi harus dijumlah kan dulu menggunakan sum(), where hanya menyaring baris di suatu kolom, sedangkan tugas having menyaring suatu kolom yg sudah di kelompokkan having lebih cocok dalam kasuss tadi.
+6. hasil SUM() akan bernilai NULL, sedangkan hasil COUNT(kolom) tidak akan menghitung nilai null, sehingga kemungkinan besar juga akan bernilai NULL (krna gua belum pernh nyoba)
+7. oh ini sebelum proses transform kan? ini sebagai laporan dan bukti data asli nya karna dalam proses transform bisa aja terjadi masalah jadi kita perlu review data nya dulu, wkwkwkwk
+
+#### Lulus dengan catatan:
+- Kelima query berhasil dibuat dengan benar.
+- Lu sudah memahami fungsi aggregate dan penggunaan GROUP BY serta HAVING.
+- Masih ada dua hal yang perlu diperkuat: urutan kerja GROUP BY dan perilaku COUNT(kolom) ketika seluruh nilainya NULL.
+
+### Next
+DAY 19 - SQL JOIN: INNER JOIN dan LEFT JOIN
