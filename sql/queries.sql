@@ -1,25 +1,39 @@
--- DAY 16 WHAT IS THE NULL?
+-- DAY 18 SQL Aggregate Functions, GROUP BY, dan HAVING
 
--- 1. Tampilkan seluruh kolom dari tabel rates yang memiliki rate NULL.
+-- 1. Tim Finance ingin mengetahui ringkasan seluruh transaksi.
 
-SELECT *
-FROM rates
-WHERE rate IS NULL;
+SELECT 
+COUNT(*) AS jumlah_baris, COUNT(total) AS total_tersedia,
+SUM(total) AS total, AVG(total) AS rata_rata,
+MIN(total) AS nilai_terendah, MAX(total) AS nilai_tetinggi
+FROM pesanan;
 
--- 2. Tampilkan quote dan rate dari tabel rates yang rate-nya tidak NULL.
+-- 2. Tim Regional meminta laporan jumlah dan total transaksi untuk masing-masing kota.
 
-SELECT *
-FROM rates
-WHERE rate IS NOT NULL;
-
--- 3. Tampilkan semua pesanan yang totalnya NULL atau lebih besar dari 100000.
-
-SELECT *
+SELECT kota, COUNT(*) AS jumlah_keseluruhan, SUM(total) AS total_transaksi
 FROM pesanan
-WHERE total IS NULL OR total > 100000;
+GROUP BY kota;
 
--- 4. Hitung jumlah seluruh pesanan dan jumlah pesanan yang memiliki total tersedia. Tampilkan keduanya dalam satu query.
+-- 3. Finance hanya ingin melihat kota yang memiliki total transaksi lebih dari Rp150.000.Buat query yang menampilkan nama kota dan total transaksi per kota.
 
-SELECT COUNT(*) AS Jumlah_pesanan, SUM(total) AS Total_pesanan
+SELECT kota, COUNT(*) AS jumlah_keseluruhan, SUM(total) AS total_transaksi
 FROM pesanan
-WHERE total IS NOT NULL;
+GROUP BY kota
+HAVING SUM(total) > 150000;
+
+-- 4. Tim Data Quality ingin mengetahui kondisi setiap mata uang.
+
+SELECT quote, COUNT(*) AS all_record,
+COUNT(rate) AS available_rate, AVG(rate) average_rate
+FROM rates
+GROUP BY quote;
+
+-- 5. Tim Analytics hanya ingin mengambil mata uang yang rata-rata kursnya lebih besar dari 100.
+
+SELECT quote, COUNT(*) AS all_record,
+COUNT(rate) AS available_rate, AVG(rate) average_rate
+FROM rates
+GROUP BY quote
+HAVING AVG(rate) > 100;
+
+--- > Source in database idr-fx-pipeline, table rates and pesanan
