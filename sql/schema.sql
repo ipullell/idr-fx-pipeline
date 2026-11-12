@@ -14,3 +14,17 @@ CREATE TABLE rates (
     quote TEXT,
     rate  NUMERIC
 );
+
+
+-- Create Tabel pelanggan
+CREATE TABLE IF NOT EXISTS pelanggan (
+    id_pelanggan INT PRIMARY KEY,
+    nama VARCHAR(100) NOT NULL
+);
+
+-- Create Tabel transaksi
+CREATE TABLE IF NOT EXISTS transaksi (
+    id_transaksi INT PRIMARY KEY,
+    id_pelanggan INT,
+    total NUMERIC(12, 2)
+);
