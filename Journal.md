@@ -630,3 +630,50 @@ Gunakan GROUP BY dan HAVING.
 
 ### Next
 DAY 19 - SQL JOIN: INNER JOIN dan LEFT JOIN
+
+--- 
+
+## Day 19 · 12 November 2026 > *_Materi Minggu 2_*
+
+### Objective
+1. Memahami konsep SQL JOIN.
+2. Memahami perbedaan INNER JOIN dan LEFT JOIN.
+3. Menggabungkan dua tabel menggunakan kondisi ON.
+4. Menjelaskan alasan memilih jenis JOIN sesuai kebutuhan data.
+5. Memahami bagaimana JOIN dapat memengaruhi jumlah baris hasil query.
+
+### Gate
+1. Apa fungsi utama SQL JOIN?
+2. Apa perbedaan INNER JOIN dan LEFT JOIN?
+3. Apa fungsi ON dalam JOIN?
+4. Jika pelanggan tidak memiliki transaksi, apakah pelanggan tersebut muncul pada INNER JOIN? Bagaimana dengan LEFT JOIN?
+5. Kenapa nama Ani muncul dua kali pada hasil JOIN?
+6. Dalam kebutuhan Data Quality, kenapa LEFT JOIN bisa lebih berguna daripada INNER JOIN?
+
+### Task
+#### Task 1 — Finance Transaction Report
+
+Buat query yang menampilkan:
+- Nama pelanggan.
+- Total transaksi.
+- Hanya pelanggan yang memiliki transaksi.
+Ketentuan: gunakan INNER JOIN.
+
+#### Task 2 — Customer Coverage Report
+
+Buat query yang menampilkan:
+- Seluruh nama pelanggan.
+- Total transaksi jika tersedia.
+- Pelanggan yang belum memiliki transaksi tetap harus muncul.
+Ketentuan: gunakan LEFT JOIN.
+
+#### Task 3 — Analisis hasil
+
+Jelaskan:
+- Berapa baris hasil Task 1?
+- Berapa baris hasil Task 2?
+- Kenapa jumlah baris kedua hasil tersebut berbeda?
+
+### Status
+
+### Next
