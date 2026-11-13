@@ -636,44 +636,92 @@ DAY 19 - SQL JOIN: INNER JOIN dan LEFT JOIN
 ## Day 19 · 12 November 2026 > *_Materi Minggu 2_*
 
 ### Objective
-1. Memahami konsep SQL JOIN.
-2. Memahami perbedaan INNER JOIN dan LEFT JOIN.
-3. Menggabungkan dua tabel menggunakan kondisi ON.
-4. Menjelaskan alasan memilih jenis JOIN sesuai kebutuhan data.
-5. Memahami bagaimana JOIN dapat memengaruhi jumlah baris hasil query.
+1. Memahami alasan dua tabel perlu digabungkan.
+2. Memahami fungsi INNER JOIN dan LEFT JOIN.
+3. Menentukan kolom yang digunakan untuk menghubungkan dua tabel.
+4. Menjelaskan perbedaan hasil INNER JOIN dan LEFT JOIN.
+5. Memilih jenis JOIN berdasarkan kebutuhan laporan atau permintaan bisnis.
+6. Menjelaskan kenapa memilih JOIN tersebut, bukan sekadar membuat query yang berhasil dijalankan.
 
 ### Gate
-1. Apa fungsi utama SQL JOIN?
-2. Apa perbedaan INNER JOIN dan LEFT JOIN?
-3. Apa fungsi ON dalam JOIN?
-4. Jika pelanggan tidak memiliki transaksi, apakah pelanggan tersebut muncul pada INNER JOIN? Bagaimana dengan LEFT JOIN?
-5. Kenapa nama Ani muncul dua kali pada hasil JOIN?
-6. Dalam kebutuhan Data Quality, kenapa LEFT JOIN bisa lebih berguna daripada INNER JOIN?
+1. Bisa menjelaskan INNER dan LEFT JOIN
+2. Bisa menentukan kolom penghubung
+3. Bisa menulis kedua JOIN dengan benar
+4. Bisa memprediksi baris yang muncul dan tidak muncul
+5. Bisa menjelaskan alasan pemilihan JOIN
 
 ### Task
-#### Task 1 — Finance Transaction Report
+__From: Operations Team__
+__Subject: Customer Order Reconciliation Report__
+__Case: Tim Operations meminta dua laporan untuk memeriksa hubungan antara data pesanan dan master pelanggan.__
 
-Buat query yang menampilkan:
-- Nama pelanggan.
-- Total transaksi.
-- Hanya pelanggan yang memiliki transaksi.
-Ketentuan: gunakan INNER JOIN.
+__Requirement 1 — Verified Customer Orders__
 
-#### Task 2 — Customer Coverage Report
+Tampilkan seluruh pesanan yang pelanggannya terdaftar dalam master pelanggan.
 
-Buat query yang menampilkan:
-- Seluruh nama pelanggan.
-- Total transaksi jika tersedia.
-- Pelanggan yang belum memiliki transaksi tetap harus muncul.
-Ketentuan: gunakan LEFT JOIN.
+Kolom:
+- id pesanan
+- nama pelanggan
+- kota
+- total
 
-#### Task 3 — Analisis hasil
+__Requirement 2 — All Incoming Orders__
 
-Jelaskan:
-- Berapa baris hasil Task 1?
-- Berapa baris hasil Task 2?
-- Kenapa jumlah baris kedua hasil tersebut berbeda?
+Tampilkan seluruh pesanan yang masuk, termasuk pesanan dari nama pelanggan yang belum ditemukan dalam master pelanggan.
+
+Kolom:
+- id pesanan
+- nama pelanggan
+- kota
+- total
+- id pelanggan
 
 ### Status
+__GAGAL ULANG DI HARI YG SAMA DENGAN DATA BARU!!!__
+1. INNER JOIN hanya menampilkan data yg cocok yg ada pasangan nya di kolom penghubung, jika tidak ada maka tidak tampil, sedangkan LEFT JOIN akan menampilkan semua data yg di pilih di sebelah kiri (yg di tulis di FROM) jika ada data di sebelah kanan yg di ambil tidak cocok maka akan di isi dengan NULL.
+2. kolom penghubung di tentukan oleh kecocokan data, dan tidak ada yg duplikat dari kedua tabel, gampang nya kolom yg unik lah sperti nik, nim, index dan sebagainya.
+3. ya bisa, lihat aja di dalam file queies.sql
+4. bisa dengan cara melihat join yg akan di gunakan dan data aslinya, tapi jika datanya banyak bgt smpe susah mau liat baris mana aja yg isinya null atau gaada jadi aga susah, kecuali main di filter" dulu (belum penah nyoba).
+5. alasan memilih join yg tepat tergantung kebutuhan. 
+
+### Problem
+gua ganti tabel krna referensi pelajaran sebelumnya membuat gua semakin bingung dengan pertanyaan dan kondisi tabel yg tidak sesuai sehingga pertanyaan ai menjadi tidak jelas dan susah di pahami. day 19 belum selsai.
+### Next
+-
+
+
+## Day 19 · 13 November 2026 > *_Materi Minggu 2_*
+
+Gua ngulang dengan tabel yg berbeda agar bisa memahami join dengan lebih baik.
+
+### Materi
+ DAY 19 - SQL JOIN: INNER JOIN dan LEFT JOIN
+
+### Task
+#### Requirement A
+
+Buat laporan produk yang pernah terjual. Tampilkan:
+- product_name
+- category
+- sale_id
+- quantity
+- sale_date
+Pilih jenis JOIN yang tepat agar hanya produk yang memiliki transaksi penjualan yang ditampilkan.
+
+#### Requirement B
+
+Buat laporan seluruh produk, termasuk produk yang belum pernah terjual. Tampilkan kolom yang sama seperti Requirement A.
+
+Pilih jenis JOIN yang tepat agar produk yang belum pernah terjual tetap muncul.
+
+Aturan latihan:
+- Gunakan hanya tabel products dan sales.
+- Gunakan relasi products.product_id dan sales.product_id.
+- Tulis query sendiri.
+- Jangan gunakan query contoh departments dan employees sebagai jawaban langsung; pahami dulu lalu sesuaikan dengan kebutuhan laporan.
+
+### Status
+LULUS, gua lumayan memahami dengan tabel yg baru, it's nice
 
 ### Next
+Day 20: Evaluasi SQL
