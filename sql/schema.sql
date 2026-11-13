@@ -28,3 +28,37 @@ CREATE TABLE IF NOT EXISTS transaksi (
     id_pelanggan INT,
     total NUMERIC(12, 2)
 );
+
+-- =====================================================
+-- TABEL BELAJAR JOIN
+-- Satu department dapat memiliki banyak employee.
+-- =====================================================
+
+CREATE TABLE departments (
+    department_id INTEGER PRIMARY KEY,
+    department_name VARCHAR(50) NOT NULL,
+    office_city VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE employees (
+    employee_id INTEGER PRIMARY KEY,
+    employee_name VARCHAR(80) NOT NULL,
+    department_id INTEGER,
+    monthly_salary DECIMAL(12,2) NOT NULL,
+    FOREIGN KEY (department_id) REFERENCES departments(department_id)
+);
+
+CREATE TABLE products (
+    product_id INTEGER PRIMARY KEY,
+    product_name VARCHAR(80) NOT NULL,
+    category VARCHAR(50) NOT NULL,
+    unit_price DECIMAL(12,2) NOT NULL
+);
+
+CREATE TABLE sales (
+    sale_id INTEGER PRIMARY KEY,
+    product_id INTEGER,
+    quantity INTEGER NOT NULL,
+    sale_date DATE NOT NULL,
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
