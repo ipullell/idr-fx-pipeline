@@ -725,3 +725,110 @@ LULUS, gua lumayan memahami dengan tabel yg baru, it's nice
 
 ### Next
 Day 20: Evaluasi SQL
+
+## Day 20 · 14 November 2026 > *_Materi Minggu 2_*
+
+### Materi
+Evaluasi SQL, Latihan untuk melihat hasil gua belajar SQL Selama seminggu ini(lebih sih keknya hehe)
+
+### Task
+#### Aturan pengerjaan:
+- Kerjakan dari query editor kosong.
+- Waktu maksimal 30 menit.
+- Tidak boleh menggunakan AI, catatan, atau melihat contoh query sebelumnya.
+- Gunakan database latihan yang sudah berisi tabel products, sales, departments, dan employees.
+- Kerjakan sendiri. Jangan khawatir kalau ada bagian yang lupa.
+
+#### Bagian A — SELECT, WHERE, ORDER BY
+_Soal 1. Buat query untuk menampilkan produk dengan kategori Accessories._
+
+Kolom yang ditampilkan:
+- product_name
+- category
+- unit_price
+Urutkan harga produk dari yang paling mahal ke paling murah.
+
+_Soal 2. Buat query untuk menampilkan transaksi penjualan dengan quantity minimal 2._
+
+Kolom yang ditampilkan:
+- sale_id
+- product_id
+- quantity
+- sale_date
+Urutkan berdasarkan tanggal penjualan dari yang paling baru.
+
+#### Bagian B — GROUP BY, HAVING, fungsi agregat
+_Soal 3. Buat laporan jumlah transaksi untuk setiap produk._
+
+Kolom hasil:
+- product_id
+- jumlah transaksi
+Hanya tampilkan produk yang memiliki lebih dari satu transaksi.
+
+_Soal 4. Buat laporan total unit terjual untuk setiap produk._
+
+Kolom hasil:
+- product_id
+- total quantity terjual
+Urutkan total quantity dari terbesar ke terkecil.
+
+#### Bagian C — JOIN
+_Soal 5. Buat laporan transaksi penjualan yang memiliki produk terdaftar._
+
+Kolom:
+- sale_id
+- product_name
+- quantity
+- sale_date
+Gunakan jenis JOIN yang sesuai dengan kebutuhan tersebut.
+
+_Soal 6. Buat laporan seluruh produk, termasuk produk yang belum pernah terjual._
+
+Kolom:
+- product_id
+- product_name
+- sale_id
+- quantity
+Produk tanpa transaksi harus tetap ditampilkan.
+
+_Soal 7. Buat laporan nama department beserta jumlah employee di setiap department. Department yang belum memiliki employee juga harus tetap muncul._
+
+Kolom:
+- department_name
+- jumlah employee
+Gunakan JOIN dan pengelompokan yang sesuai.
+
+
+### Gate
+Setelah mengerjakan soal, jawab pertanyaan berikut tanpa membuka catatan.
+1. Apa perbedaan WHERE dan HAVING?
+2. Apa fungsi GROUP BY?
+3. Kenapa COUNT(*) dan COUNT(kolom) bisa menghasilkan angka berbeda?
+4. Apa perbedaan hasil INNER JOIN dan LEFT JOIN?
+5. Jika satu produk memiliki lima transaksi, apa yang terjadi pada jumlah baris hasil JOIN?
+
+### Kriteria kelulusan
+
+| Penilaian | Bobot |
+| --- | --- |
+| Bagian A — filtering dan sorting	| 20 |
+| Bagian B — grouping dan agregasi	| 30 |
+| Bagian C — JOIN	| 35 |
+| Gate — pemahaman konsep	| 15 |
+| Total	| 100 | 
+
+- LULUS
+   80–100 dan tidak ada kesalahan konsep fundamental.
+- LULUS DENGAN CATATAN
+   65–79, atau ada kelemahan tertentu yang masih bisa diperbaiki.
+- BELUM LULUS
+   di bawah 65 atau fondasi penting belum dipahami.
+
+### Status
+1. Where akan memfilter data dari baris sebelum group by, sedangkan having akan memfilter kolom nya setelah group by.
+2. membuat beberapa kolom yg di pilih menjadi satu kelompok agar bisa di filter untuk kebutuhan lebih lanjut.
+3. karna count(*) artinya menghitung semua baris di dalam tabel termasuk null, sedangkan count(kolom) hanya menghitung baris di dalam kolom yg dipilih saja dan data yg berisi null tidak di hitung.
+4. inner join akan menghilangkan data yg tidak ada pasangan nyaa, sedangkan left join akan tetap mengambil data di sebelah kiri dan jika tidak ada pasangan nya di sebelah kanan maka akan di kosongkan dengan tulisan null.
+5. baris hasil join akan tetap menghasilkan 5 baris transaksi.
+
+### Next
