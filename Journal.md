@@ -832,3 +832,61 @@ Setelah mengerjakan soal, jawab pertanyaan berikut tanpa membuka catatan.
 5. baris hasil join akan tetap menghasilkan 5 baris transaksi.
 
 ### Next
+Ulangan Remedial SQL — Day 20
+
+
+## Day 21 · 15 November 2026 > *_Materi Minggu 2_* 
+
+### Materi > Ulangan Remedial SQL — Day 20
+Memastikan lu menguasai tiga hal:
+1. Filtering menggunakan WHERE.
+2. Perbedaan COUNT() dan SUM().
+3. Memilih kolom yang diminta menggunakan SELECT
+
+### Kriteria kelulusan
+LULUS
+ 85–100
+
+LULUS DENGAN CATATAN
+ 70–84
+
+BELUM LULUS
+ Di bawah 70
+
+### Task
+_Soal 1 — WHERE dan SELECT (30 poin)_
+Dari tabel products, tampilkan produk dengan kategori Accessories.
+
+Kolom yang harus ditampilkan:
+- product_name
+- category
+- unit_price
+Urutkan berdasarkan unit_price dari harga tertinggi ke terendah.
+
+_Soal 2 — COUNT vs SUM (40 poin)_
+Dari tabel sales, buat query untuk setiap product_id yang tercatat dengan informasi:
+
+- Jumlah transaksi menggunakan alias jumlah_transaksi.
+- Total unit terjual menggunakan alias total_unit_terjual.
+Gunakan pengelompokan berdasarkan product_id.
+
+_Soal 3 — SELECT kolom spesifik (30 poin)_
+Dari tabel sales, tampilkan transaksi yang memiliki quantity minimal 2.
+
+Kolom yang harus ditampilkan:
+- sale_id
+- product_id
+- quantity
+- sale_date
+Urutkan berdasarkan sale_date dari terbaru ke terlama.
+
+### Gate
+Jawab dengan kata-kata lu sendiri.
+1. Apa perbedaan fungsi WHERE dan ORDER BY?
+2. Kalau ada 4 baris transaksi dengan quantity masing-masing 2, 3, 1, dan 4, berapa hasil COUNT(quantity) dan SUM(quantity)? Jelaskan.
+3. Kenapa SELECT * tidak selalu menjadi pilihan terbaik ketika soal meminta kolom tertentu?
+
+### Status
+Nilai 96, salah di bagian menghitung nilai transaksi, gua ikut menghitung null juga, jadi harusnya pake  count(*)
+### Next
+besok lanjut belajar memahami data raw dan kebutuhan transformasi. membaca hasil json hasil extract mengidentifikasi tipe data, null, duplikat, dan menentukan data yg perlu di bersihkan. ini yg gua peljari besok.
