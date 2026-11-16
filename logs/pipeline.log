@@ -10,3 +10,10 @@
 2026-11-01 11:02:46,508 | INFO | Mendapatkan respon api detail: [200]
 2026-11-01 11:02:46,518 | INFO | Menyimpan data ke dalam file...
 2026-11-01 11:02:46,522 | INFO | Proses Extracat sukses data masuk ke dalam file C:\Data Engineer\data\raw\result_2026-11-01_11-02-45.json
+(2026-11-16 14:23:05,349 | INFO | Berhasil memanggil api...)
+(2026-11-16 14:23:05,354 | INFO | Berhasil memasukan data apa adanya ke dalam C:\ipull\BELAJAR\idr-fx-pipeline\data\raw\rates_2026-11-16_14-23-05.json)
+(2026-11-16 14:23:05,355 | INFO | Proses extract sukses data berhasil di masukan ke dalam file : C:\ipull\BELAJAR\idr-fx-pipeline\data\raw\rates_2026-11-16_14-23-05.json)
+2026-11-16 14:23:11,577 | INFO | Memulai prosess extract...
+2026-11-16 14:23:11,854 | INFO | Mendapatkan respon api detail: [200]
+2026-11-16 14:23:11,858 | INFO | Menyimpan data ke dalam file...
+2026-11-16 14:23:11,860 | INFO | Proses Extracat sukses data masuk ke dalam file C:\ipull\BELAJAR\idr-fx-pipeline\data\raw\result_2026-11-16_14-23-11.json
