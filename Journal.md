@@ -834,6 +834,7 @@ Setelah mengerjakan soal, jawab pertanyaan berikut tanpa membuka catatan.
 ### Next
 Ulangan Remedial SQL — Day 20
 
+---
 
 ## Day 21 · 15 November 2026 > *_Materi Minggu 2_* 
 
@@ -890,3 +891,112 @@ Jawab dengan kata-kata lu sendiri.
 Nilai 96, salah di bagian menghitung nilai transaksi, gua ikut menghitung null juga, jadi harusnya pake  count(*)
 ### Next
 besok lanjut belajar memahami data raw dan kebutuhan transformasi. membaca hasil json hasil extract mengidentifikasi tipe data, null, duplikat, dan menentukan data yg perlu di bersihkan. ini yg gua peljari besok.
+
+---
+
+## Day 22 · 16 November 2026 > *_Materi Minggu 2_* 
+
+### Materi > Memahami Raw Data dan Kebutuhan Transformasi
+__Target belajar hari ini:__
+1. Membaca struktur JSON hasil Extract.
+2. Mengidentifikasi tipe data setiap field.
+3. Menemukan nilai null dan memahami dampaknya.
+4. Mengidentifikasi kemungkinan data duplikat.
+5. Menentukan data yang perlu dibersihkan atau ditransformasi.
+
+### Task
+Sebelum kita memakai JSON asli dari proyek, gue mau pastikan lu bisa membaca struktur dan mengenali masalahnya.
+
+Gunakan JSON contoh dibawah ini.
+```
+[
+  {
+    "date": "2026-11-13",
+    "base": "EUR",
+    "quote": "IDR",
+    "rate": 19250.5
+  },
+  {
+    "date": "2026-11-13",
+    "base": "EUR",
+    "quote": "USD",
+    "rate": 1.16
+  },
+  {
+    "date": "2026-11-13",
+    "base": "EUR",
+    "quote": "XAU",
+    "rate": null
+  },
+  {
+    "date": "2026-11-13",
+    "base": "EUR",
+    "quote": "IDR",
+    "rate": 19250.5
+  }
+]
+```
+Jawab tiga hal berikut dengan pemahaman lu sendiri:
+1. Identifikasi tipe data
+
+Sebutkan tipe data dari field:
+- date
+- base
+- quote
+- rate
+2. Identifikasi masalah
+- Ada berapa record yang memiliki rate bernilai null?
+- Record mana yang berpotensi duplikat?
+- Apa dasar lu menyebutnya duplikat?
+3. Tentukan kebutuhan transformasi
+
+Menurut lu, apa yang sebaiknya dilakukan terhadap:
+- Record dengan rate = null.
+- Record yang terduplikasi.
+
+---
+
+4. Tentang tanggal
+
+File lu memiliki tanggal 2026-11-13, 2026-11-15, dan 2026-11-16.
+
+Menurut lu, apakah perbedaan tanggal tersebut otomatis berarti data bermasalah? Kenapa?
+
+5. Tentang rate
+
+Di file lu ada rate bernilai 1.5863e-05.
+
+Menurut lu, apakah angka dengan format seperti itu termasuk data yang salah, atau masih merupakan angka yang valid?
+
+6. Tentang cleaning
+
+Karena file lu tidak memiliki null dan duplikat, menurut lu apakah kita tetap membutuhkan proses transformasi? Sebutkan minimal dua pemeriksaan atau perubahan yang masih masuk akal dilakukan.
+
+---
+
+### Status
+LULUS
+1. Tipe data
+
+-date =string
+-base =string
+-quote =string
+-rate =integer/null
+
+2. identifikasi masalah
+
+-ada 1 baris doang di record 3 field rate
+-quote dan rate, kita bisa memvalidasi berdasarkan tanggal nya juga sih
+-yaa klo muncul 2x dengan isian data yg sama persis
+
+3. record dengan rate null itu tergantung aturan dan keperluan sih. klo yg duplikat yaa di hapus lah
+4. tidak, malah dengan eh... gua aja ga tau datanya mau dikemanakan kalo lu nanya data nya bermasalah ya bodo amat ga di apa apakan juga datanya gaberpengaruh ama gua njir.
+5. angka yg salah krna gua gatau itu angka apa
+6. iyaa mungkin seperti menyeragamkan tanggal, mengubah tipe data sesuai kebutuhan dan yaaa memisah berdasarkan tanggal kalo perlu
+
+### Problem
+Belum terbiasa mengenali scientific notation. and ternyata hari ini gua ga ngoding wkwkwk gapapa lah lagian program yg gua buat di folder src kuat" semua cui gua tinggal bberapa hari eh masih jalan tanpa error.
+
+### Next
+Day 23 — Dasar pandas dan transformasi data
+   Mempelajari operasi pandas yang memang dibutuhkan untuk membersihkan data proyek.
